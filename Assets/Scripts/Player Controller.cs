@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
-public float forwardSpeed;
 using UnityEngine;
 
-public class CharacterController : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     private CharacterController controller;
-    private VEctor3 direction;
+    private Vector3 direction;
+    public float forwardSpeed;
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -20,6 +20,6 @@ public class CharacterController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        controller.Move(direction * TimeDeltaTime)
+        controller.Move(direction * Time.DeltaTime)
     }
 }
